@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频下载工具</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- 头部 -->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-icon">VD</div>
+        <div class="logo-text">
+          <h1>视频下载工具</h1>
+          <span class="version">v1.0.0</span>
+        </div>
+      </div>
+      <button class="settings-btn" id="settingsBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 当前页面状态 -->
+    <div class="page-status">
+      <div class="status-item">
+        <div class="status-icon" id="pageIcon">🌐</div>
+        <div class="status-info">
+          <div class="status-title" id="pageTitle">检测中...</div>
+          <div class="status-subtitle" id="pageUrl">正在分析当前页面</div>
+        </div>
+        <div class="status-badge" id="statusBadge">
+          <span class="loading-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 检测到的视频 -->
+    <div class="videos-section" id="videosSection" style="display: none;">
+      <div class="section-header">
+        <h3>检测到的视频</h3>
+        <span class="video-count" id="videoCount">0</span>
+      </div>
+      <div class="videos-list" id="videosList">
+        <!-- 视频项将通过JavaScript动态添加 -->
+      </div>
+    </div>
+
+    <!-- 快速操作 -->
+    <div class="quick-actions">
+      <div class="section-header">
+        <h3>快速操作</h3>
+      </div>
+      <div class="action-buttons">
+        <button class="action-btn primary" id="quickDownloadBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7,10 12,15 17,10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          快速下载
+        </button>
+        <button class="action-btn secondary" id="openMainAppBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15,3 21,3 21,9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          打开主应用
+        </button>
+      </div>
+    </div>
+
+    <!-- 统计信息 -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">今日下载</span>
+        <span class="stat-value" id="todayDownloads">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">成功率</span>
+        <span class="stat-value" id="successRate">--</span>
+      </div>
+    </div>
+
+    <!-- 设置面板 -->
+    <div class="settings-panel" id="settingsPanel" style="display: none;">
+      <div class="settings-header">
+        <h3>扩展设置</h3>
+        <button class="close-btn" id="closeSettingsBtn">×</button>
+      </div>
+      <div class="settings-content">
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="autoDetectVideos" checked>
+            <span class="checkmark"></span>
+            自动检测视频
+          </label>
+        </div>
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="showFloatingButton" checked>
+            <span class="checkmark"></span>
+            显示浮动按钮
+          </label>
+        </div>
+        <div class="setting-item">
+          <label class="setting-label">
+            <input type="checkbox" id="enableNotifications" checked>
+            <span class="checkmark"></span>
+            启用通知
+          </label>
+        </div>
+        <div class="setting-item">
+          <label for="defaultQuality">默认质量:</label>
+          <select id="defaultQuality">
+            <option value="best">最佳质量</option>
+            <option value="1080p" selected>1080p</option>
+            <option value="720p">720p</option>
+            <option value="480p">480p</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
