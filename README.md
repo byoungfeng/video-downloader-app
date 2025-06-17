@@ -2,7 +2,7 @@
 
 一个现代化的跨平台视频下载工具，支持多个主流视频平台，提供简洁易用的界面和强大的下载功能。
 
-![主界面截图](/placeholder.svg?height=600&width=1200&text=视频下载工具主界面)
+![主界面截图](image-1.png)
 
 ## ✨ 功能特性
 
@@ -29,19 +29,19 @@
 ## 🖼️ 界面截图
 
 ### 主界面
-![主界面](/placeholder.svg?height=500&width=800&text=主界面-侧边栏和内容区域)
+![主界面截图](image-1.png)
 
 ### 视频解析
-![视频解析](/placeholder.svg?height=400&width=800&text=视频解析界面-URL输入和选项设置)
+![视频解析](image-2.png)
 
 ### 下载队列
-![下载队列](/placeholder.svg?height=400&width=800&text=下载队列-进度管理)
+![下载队列](image-3.png)
 
 ### 活动监控
-![活动监控](/placeholder.svg?height=400&width=800&text=活动监控-实时状态)
+![活动监控](image-4.png)
 
 ### 设置页面
-![设置页面](/placeholder.svg?height=400&width=800&text=设置页面-配置选项)
+![设置页面](image-5.png)
 
 ## 🚀 快速开始
 
